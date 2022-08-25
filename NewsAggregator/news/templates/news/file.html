@@ -1,0 +1,17 @@
+<!-- {% extends "news/empty_base.html" %} -->
+{% block content %}
+    <h1>Upload country list</h1>
+    <form action="uploadfile" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <p><input type="file" name="file_country" accept=".txt">
+            <input type="submit" value="Upload"></p>
+    </form>
+
+    <ul>
+        {% for line in filedata %}
+            <li>{{line}}</li>
+        {% endfor %}
+    </ul>
+    <input action="createcountry" type="submit" value="Create"></p>
+
+{% endblock content %}
