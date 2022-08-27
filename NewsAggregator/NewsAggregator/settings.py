@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h!l0ji4_v)*l-@!+05m!3plel4^926k1z!s_sgw^j!o^3cd)6e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'newsaggr.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mynewsaggregator.herokuapp.com/']
 
 # Application definition
 
