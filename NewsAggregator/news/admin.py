@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm, CountryForm
-from .models import CustomUser, Country, Category
+from .models import CustomUser, Country, CountryFile, Category
 
 
 class CustomUserAdmin(UserAdmin):
@@ -16,5 +16,6 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Country)
+admin.site.register(CountryFile)
 admin.site.register(Category)
 

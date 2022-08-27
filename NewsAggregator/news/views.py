@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from .posts import NewsData
 from django.shortcuts import render
-from .models import Country, Category
+from django.views.generic import FormView
+from .forms import UploadFileForm
+from .models import Country, CountryFile, Category
 import re
 
 
@@ -34,12 +36,21 @@ def home(request):
 
 
 def upload(request):
+    """
+    if request.method == "POST":
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            fl_name = request.FILES['file_field']
+            print('test')
+            print(fl_name)
+            return HttpResponse(fl_name)
+    """
     return render(request, 'news/file.html', )
 
 
 def uploadfile(request):
     if request.method == "POST":
-        fl_name = request.POST.get('file_country').name
+        fl_name = request.FILES.get('file_country')
         print('test')
         print(fl_name)
         return HttpResponse(fl_name)

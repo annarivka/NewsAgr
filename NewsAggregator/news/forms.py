@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser, Country, Category
+from .models import CustomUser, Country, CountryFile, Category
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -27,3 +27,7 @@ class CategoryForm(forms.ModelForm):
         fields = ('name',)
 
 
+class UploadFileForm(forms.ModelForm):
+    class Meta:
+        model = CountryFile
+        fields = ('name', 'file')

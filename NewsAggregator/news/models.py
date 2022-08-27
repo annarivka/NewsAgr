@@ -11,6 +11,14 @@ class Country(models.Model):
         return f'{self.name} ({self.code})'
 
 
+class CountryFile(models.Model):
+    name = models.CharField(max_length=100)
+    file = models.FileField(upload_to='storage/')
+
+    def __str__(self):
+        return self.name
+
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
@@ -20,4 +28,5 @@ class Category(models.Model):
 
 class CustomUser(AbstractUser):
     country = models.ManyToManyField(Country)
+
 
